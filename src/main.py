@@ -84,7 +84,6 @@ def pep(session):
 
 
 def whats_new(session):
-    # Вместо константы WHATS_NEW_URL, используйте переменную whats_new_url.
     whats_new_url = urljoin(MAIN_DOC_URL, 'whatsnew/')
     response = get_response(session, whats_new_url)
     response.encoding = DEFAULT_RESPONSE_ENCODING
@@ -154,7 +153,6 @@ def latest_versions(session):
 
 
 def download(session):
-    # Вместо константы DOWNLOADS_URL, используйте переменную downloads_url.
     downloads_url = urljoin(MAIN_DOC_URL, 'download.html')
     response = get_response(session, downloads_url)
     response.encoding = DEFAULT_RESPONSE_ENCODING
