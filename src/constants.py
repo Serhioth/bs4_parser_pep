@@ -1,3 +1,4 @@
+from enum import Enum
 from pathlib import Path
 
 # Python docs main url.
@@ -34,3 +35,23 @@ PEP_STATUS_COUNTER = {
     'Draft': 0,
     'Other': 0
 }
+
+
+# Class for output choices template
+class OutputType(str, Enum):
+    PRETTY = 'pretty'
+    FILE = 'file'
+
+
+DEFAULT_RESPONSE_ENCODING = 'utf-8'
+DEFAULT_PARSE_MODE = 'lxml'
+
+
+class RegexpTemplates:
+    '''Class for storing regexp templates. '''
+    # Template for finding CSS-class "rfc2822...".
+    RFC_TEMPLATE = r'rfc2822 \w+'
+    # Template for finding tag text like "Python version 3.11 (stable)".
+    PYTHON_VERSION_TEMPLATE = r'Python (?P<version>\d\.\d+) \((?P<status>.*)\)'
+    # Template for finding link to download doc files in pdf format.
+    DOCS_PDF_DOWNLOAD_TEMPLATE = r'.+pdf-a4\.zip$'
